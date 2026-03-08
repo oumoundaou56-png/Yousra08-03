@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Premiers Hommes – Histoire 6ème · Yousra</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #F472B6;
+    --rose-clair: #FDF2F8;
+    --violet: #A855F7;
+    --violet-clair: #F5F3FF;
+    --mauve: #E879F9;
+    --corail: #FB7185;
+    --menthe: #34D399;
+    --jaune: #FCD34D;
+    --bg: #FFF0F9;
+    --texte: #3B1D2E;
+    --blanc: #FFFFFF;
+    --gris: #6B7280;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: ‘Quicksand’, sans-serif;
+background: var(–bg);
+color: var(–texte);
+font-size: 18px;
+line-height: 1.8;
+background-image: radial-gradient(circle at 10% 20%, #FFE4F3 0%, transparent 40%),
+radial-gradient(circle at 90% 80%, #EDE9FE 0%, transparent 40%);
+background-attachment: fixed;
+}
+
+/* PETITES ÉTOILES EN FOND */
+body::before {
+content: ‘✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦’;
+position: fixed;
+top: 0; left: 0; right: 0;
+font-size: 10px;
+color: rgba(244,114,182,0.15);
+letter-spacing: 20px;
+padding: 4px;
+pointer-events: none;
+z-index: 0;
+}
+
+/* HEADER */
+header {
+background: linear-gradient(135deg, #EC4899 0%, #A855F7 50%, #6366F1 100%);
+color: white;
+text-align: center;
+padding: 50px 20px 60px;
+position: relative;
+overflow: hidden;
+}
+header::after {
+content: ‘’;
+position: absolute;
+bottom: -2px; left: 0; right: 0;
+height: 50px;
+background: var(–bg);
+clip-path: ellipse(60% 100% at 50% 100%);
+}
+/* bulles déco */
+header .bubble {
+position: absolute;
+border-radius: 50%;
+background: rgba(255,255,255,0.12);
+}
+.b1 { width:120px;height:120px; top:-30px;left:-20px; }
+.b2 { width:80px;height:80px; top:10px;right:30px; }
+.b3 { width:50px;height:50px; bottom:30px;left:80px; }
+
+.header-stars { font-size: 28px; display: block; letter-spacing: 6px; margin-bottom: 8px; animation: twinkle 2s infinite alternate; }
+@keyframes twinkle { from{opacity:0.6} to{opacity:1} }
+
+.header-name {
+font-family: ‘Pacifico’, cursive;
+font-size: clamp(1.2rem, 4vw, 1.8rem);
+background: rgba(255,255,255,0.25);
+display: inline-block;
+padding: 4px 20px;
+border-radius: 30px;
+margin-bottom: 10px;
+letter-spacing: 1px;
+}
+header h1 {
+font-family: ‘Pacifico’, cursive;
+font-size: clamp(2rem, 6vw, 3.4rem);
+text-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+margin-bottom: 10px;
+}
+header p {
+font-size: 1rem;
+opacity: 0.9;
+font-weight: 600;
+}
+
+/* NAV */
+nav {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: center;
+padding: 20px;
+background: white;
+box-shadow: 0 4px 20px rgba(244,114,182,0.15);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+nav a {
+background: linear-gradient(135deg, var(–rose), var(–violet));
+color: white;
+text-decoration: none;
+font-weight: 700;
+padding: 8px 18px;
+border-radius: 30px;
+font-size: 0.88rem;
+transition: transform 0.2s, box-shadow 0.2s;
+box-shadow: 0 3px 10px rgba(168,85,247,0.25);
+}
+nav a:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 18px rgba(168,85,247,0.4); }
+
+/* WRAPPER */
+.wrapper { max-width: 860px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+
+/* SECTION TITLE */
+.section-title {
+display: flex;
+align-items: center;
+gap: 12px;
+font-family: ‘Pacifico’, cursive;
+font-size: 1.6rem;
+color: var(–violet);
+margin: 48px 0 6px;
+}
+.section-title .num {
+background: linear-gradient(135deg, var(–rose), var(–violet));
+color: white;
+border-radius: 50%;
+width: 42px; height: 42px;
+display: flex; align-items: center; justify-content: center;
+font-family: ‘Quicksand’, sans-serif;
+font-size: 1rem;
+font-weight: 700;
+flex-shrink: 0;
+box-shadow: 0 4px 12px rgba(168,85,247,0.35);
+}
+.sep {
+text-align: center;
+font-size: 1.2rem;
+letter-spacing: 10px;
+color: var(–rose);
+opacity: 0.5;
+margin: 8px 0 22px;
+}
+
+/* CARTE */
+.card {
+background: white;
+border-radius: 22px;
+padding: 22px 26px;
+margin-bottom: 18px;
+box-shadow: 0 4px 20px rgba(244,114,182,0.1);
+border: 2px solid transparent;
+transition: border-color 0.25s, transform 0.2s, box-shadow 0.2s;
+position: relative;
+overflow: hidden;
+}
+.card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 4px;
+background: linear-gradient(90deg, var(–rose), var(–violet), var(–mauve));
+}
+.card:hover {
+border-color: rgba(244,114,182,0.4);
+transform: translateY(-3px);
+box-shadow: 0 8px 28px rgba(244,114,182,0.18);
+}
+.card h3 {
+font-family: ‘Pacifico’, cursive;
+font-size: 1.1rem;
+color: var(–rose);
+margin-bottom: 10px;
+}
+
+/* DÉFINITION */
+.definition {
+background: linear-gradient(135deg, #FDF2F8, #F5F3FF);
+border-left: 5px solid var(–rose);
+border-radius: 0 18px 18px 0;
+padding: 16px 20px;
+margin: 14px 0;
+}
+.definition strong { color: var(–violet); font-weight: 700; }
+
+/* À RETENIR */
+.retenir {
+background: linear-gradient(135deg, #FFF0F9, #F5F3FF);
+border: 2px solid var(–rose);
+border-radius: 18px;
+padding: 18px 22px;
+margin: 20px 0;
+position: relative;
+}
+.retenir::before {
+content: ‘💖 À retenir !’;
+font-family: ‘Pacifico’, cursive;
+font-size: 1rem;
+color: var(–rose);
+display: block;
+margin-bottom: 8px;
+}
+
+/* FRISE */
+.frise { position: relative; padding: 10px 0 20px; }
+.frise-line {
+position: absolute;
+left: 50%;
+top: 0; bottom: 0;
+width: 4px;
+background: linear-gradient(to bottom, var(–rose), var(–violet));
+transform: translateX(-50%);
+border-radius: 4px;
+}
+.frise-item {
+display: flex;
+justify-content: flex-end;
+padding-right: calc(50% + 28px);
+margin-bottom: 28px;
+position: relative;
+}
+.frise-item:nth-child(odd) {
+justify-content: flex-start;
+padding-right: 0;
+padding-left: calc(50% + 28px);
+}
+.frise-item::after {
+content: ‘✦’;
+position: absolute;
+top: 14px;
+left: 50%;
+transform: translateX(-50%);
+color: var(–rose);
+font-size: 1.4rem;
+filter: drop-shadow(0 0 4px rgba(244,114,182,0.8));
+}
+.frise-box {
+background: white;
+border-radius: 18px;
+padding: 14px 18px;
+max-width: 275px;
+box-shadow: 0 4px 16px rgba(244,114,182,0.15);
+border-top: 4px solid var(–rose);
+}
+.frise-box .date {
+font-family: ‘Pacifico’, cursive;
+color: var(–violet);
+font-size: 0.95rem;
+}
+.frise-box p { font-size: 0.88rem; margin-top: 5px; }
+
+/* GRILLE MINI-CARTES */
+.mini-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+gap: 14px;
+margin-bottom: 20px;
+}
+.mini-card {
+background: white;
+border-radius: 18px;
+padding: 20px 14px;
+text-align: center;
+box-shadow: 0 3px 14px rgba(244,114,182,0.12);
+border-bottom: 4px solid var(–rose);
+transition: transform 0.2s;
+}
+.mini-card:hover { transform: translateY(-5px); }
+.mini-card .icon { font-size: 36px; display: block; margin-bottom: 8px; }
+.mini-card strong { font-family: ‘Pacifico’, cursive; font-size: 0.95rem; color: var(–violet); display: block; margin-bottom: 4px; }
+.mini-card span { font-size: 0.82rem; color: var(–gris); }
+
+/* CARTES VIES */
+.vie-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+gap: 14px;
+margin-bottom: 20px;
+}
+.vie-card {
+background: white;
+border-radius: 18px;
+padding: 20px 16px;
+box-shadow: 0 3px 14px rgba(244,114,182,0.1);
+border-top: 5px solid var(–rose);
+}
+.vie-card:nth-child(2) { border-top-color: var(–violet); }
+.vie-card:nth-child(3) { border-top-color: var(–corail); }
+.vie-card:nth-child(4) { border-top-color: var(–mauve); }
+.vie-card h3 { font-family: ‘Pacifico’, cursive; font-size: 1rem; color: var(–rose); margin-bottom: 8px; }
+
+/* QUIZ */
+.quiz-box {
+background: linear-gradient(135deg, #FFF0F9, #F5F3FF);
+border: 2px solid var(–rose);
+border-radius: 22px;
+padding: 28px;
+margin: 24px 0;
+box-shadow: 0 6px 24px rgba(244,114,182,0.15);
+}
+.quiz-box h3 {
+font-family: ‘Pacifico’, cursive;
+font-size: 1.4rem;
+color: var(–violet);
+margin-bottom: 20px;
+text-align: center;
+}
+.question { margin-bottom: 26px; }
+.question p { font-weight: 700; margin-bottom: 10px; font-size: 1rem; color: var(–texte); }
+.options { display: flex; flex-direction: column; gap: 8px; }
+.option-btn {
+background: white;
+border: 2px solid #E5D5F0;
+border-radius: 14px;
+padding: 11px 18px;
+font-family: ‘Quicksand’, sans-serif;
+font-size: 0.95rem;
+cursor: pointer;
+text-align: left;
+transition: all 0.2s;
+font-weight: 600;
+color: var(–texte);
+}
+.option-btn:hover { border-color: var(–rose); background: #FFF0F9; transform: translateX(4px); }
+.option-btn.correct { background: #ECFDF5; border-color: var(–menthe); color: #065F46; }
+.option-btn.wrong { background: #FFF1F2; border-color: var(–corail); color: #9F1239; }
+.feedback { margin-top: 10px; font-weight: 700; font-size: 0.95rem; display: none; }
+.feedback.show { display: block; }
+.feedback.ok { color: #059669; }
+.feedback.ko { color: #E11D48; }
+
+#btn-quiz {
+display: block;
+margin: 20px auto 0;
+background: linear-gradient(135deg, var(–rose), var(–violet));
+color: white;
+border: none;
+padding: 14px 36px;
+font-family: ‘Pacifico’, cursive;
+font-size: 1.1rem;
+border-radius: 30px;
+cursor: pointer;
+transition: transform 0.2s, box-shadow 0.2s;
+box-shadow: 0 4px 16px rgba(168,85,247,0.3);
+}
+#btn-quiz:hover { transform: scale(1.06); box-shadow: 0 8px 24px rgba(168,85,247,0.45); }
+
+#score-box {
+display: none;
+background: linear-gradient(135deg, var(–rose), var(–violet));
+color: white;
+border-radius: 20px;
+padding: 28px;
+text-align: center;
+margin-top: 20px;
+}
+#score-box h3 { font-family: ‘Pacifico’, cursive; font-size: 1.8rem; margin-bottom: 8px; }
+#score-box .score-num { font-size: 3.5rem; font-weight: 700; display: block; font-family: ‘Pacifico’, cursive; }
+#score-box p { font-size: 1.05rem; opacity: 0.9; margin-top: 6px; }
+
+/* LEXIQUE */
+.lexique-item {
+background: white;
+border-radius: 14px;
+padding: 14px 18px;
+margin-bottom: 12px;
+border-left: 5px solid var(–rose);
+box-shadow: 0 2px 10px rgba(244,114,182,0.1);
+transition: transform 0.15s;
+}
+.lexique-item:hover { transform: translateX(5px); }
+.lexique-item:nth-child(even) { border-left-color: var(–violet); }
+.lexique-item strong { color: var(–violet); font-family: ‘Pacifico’, cursive; font-size: 1rem; }
+
+/* FOOTER */
+footer {
+text-align: center;
+padding: 40px 20px 50px;
+color: var(–gris);
+font-size: 0.88rem;
+}
+footer span { color: var(–rose); }
+
+@media(max-width: 600px) {
+.frise-line { display: none; }
+.frise-item, .frise-item:nth-child(odd) { justify-content: center; padding: 0; }
+.frise-item::after { display: none; }
+.mini-grid { grid-template-columns: repeat(2,1fr); }
+.vie-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="bubble b1"></div>
+  <div class="bubble b2"></div>
+  <div class="bubble b3"></div>
+  <span class="header-stars">✨ 🌸 ✨ 🌸 ✨</span>
+  <div class="header-name">✨ Le cours de Yousra ✨</div>
+  <h1>Les Premiers Hommes</h1>
+  <p>Histoire · Classe de 6ème 💜</p>
+</header>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#periode">📅 La Préhistoire</a>
+  <a href="#evolution">🐒 Évolution</a>
+  <a href="#vie">🏕️ Leur vie</a>
+  <a href="#outils">🪨 Les outils</a>
+  <a href="#art">🎨 L'art</a>
+  <a href="#neolithique">🌾 Néolithique</a>
+  <a href="#quiz">💖 Quiz</a>
+  <a href="#lexique">📖 Lexique</a>
+</nav>
+
+<div class="wrapper">
+
+<!-- INTRO -->
+
+<div class="card" style="margin-top:36px;">
+  <h3>🎯 Ce que tu vas apprendre</h3>
+  <ul style="padding-left:22px; display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+    <li>🕐 Quand et où vivaient les premiers hommes</li>
+    <li>🔄 Comment l'être humain a évolué au fil du temps</li>
+    <li>🍖 Comment ils se nourrissaient et vivaient</li>
+    <li>🪨 Les outils qu'ils fabriquaient</li>
+    <li>🎨 Les premières peintures dans les grottes</li>
+    <li>🌾 La grande révolution du Néolithique</li>
+  </ul>
+</div>
+
+<!-- 1. PRÉHISTOIRE -->
+
+<section id="periode">
+  <div class="section-title"><div class="num">1</div> C'est quoi la Préhistoire ? 🦴</div>
+  <div class="sep">✦ ✧ ✦ ✧ ✦</div>
+
+  <div class="card">
+    <h3>📅 Une période très, très longue !</h3>
+    <p>La Préhistoire, c'est la période qui va du début de l'humanité jusqu'à l'invention de <strong>l'écriture</strong> (vers – 3 300 avant J.-C.). Elle dure environ <strong>3 millions d'années</strong> ! C'est énorme 😲</p>
+  </div>
+
+  <div class="definition">
+    <strong>Préhistoire</strong> = la période d'avant l'écriture. On la connaît grâce aux fouilles archéologiques : des os, des outils et des peintures retrouvés dans le sol.
+  </div>
+
+  <div class="card">
+    <h3>🔍 Comment on sait tout ça ?</h3>
+    <p>Des spécialistes appelés <strong>archéologues</strong> fouillent la terre pour trouver des traces du passé. Ils découvrent des os, des outils en pierre, des peintures sur les murs des grottes…</p>
+  </div>
+
+  <div class="retenir">
+    La Préhistoire commence il y a environ <strong>3 millions d'années</strong> et se termine avec l'apparition de l'écriture, vers <strong>3 300 avant Jésus-Christ</strong>.
+  </div>
+</section>
+
+<!-- 2. ÉVOLUTION -->
+
+<section id="evolution">
+  <div class="section-title"><div class="num">2</div> Comment l'homme a évolué 🐒➡️🧍</div>
+  <div class="sep">✦ ✧ ✦ ✧ ✦</div>
+
+  <div class="card">
+    <h3>🌍 L'Afrique, berceau de l'humanité</h3>
+    <p>Les premiers êtres humains sont apparus en <strong>Afrique</strong>, il y a environ <strong>3 millions d'années</strong>. Ensuite, ils se sont peu à peu répandus sur toute la planète 🌍</p>
+  </div>
+
+  <div class="frise">
+    <div class="frise-line"></div>
+
+```
+<div class="frise-item">
+  <div class="frise-box">
+    <div class="date">Il y a 3 millions d'ans</div>
+    <p>🦴 <strong>Australopithèque</strong> – marche debout mais ressemble encore au singe. Ex : <em>Lucy</em>, découverte en Éthiopie.</p>
+  </div>
+</div>
+
+<div class="frise-item">
+  <div class="frise-box">
+    <div class="date">Il y a 2 millions d'ans</div>
+    <p>🪨 <strong>Homo habilis</strong> – fabrique les premiers outils en pierre taillée.</p>
+  </div>
+</div>
+
+<div class="frise-item">
+  <div class="frise-box">
+    <div class="date">Il y a 1,8 million d'ans</div>
+    <p>🔥 <strong>Homo erectus</strong> – se dresse bien droit, maîtrise le <strong>feu</strong>, et quitte l'Afrique pour explorer le monde.</p>
+  </div>
+</div>
+
+<div class="frise-item">
+  <div class="frise-box">
+    <div class="date">Il y a 300 000 ans</div>
+    <p>🧍 <strong>Homo sapiens</strong> – c'est nous ! Il pense de façon complexe, parle, et crée de l'art.</p>
+  </div>
+</div>
+
+<div class="frise-item">
+  <div class="frise-box">
+    <div class="date">Il y a 40 000 ans</div>
+    <p>🎨 <strong>Homo sapiens</strong> arrive en Europe et peint les premières grottes (Lascaux, Chauvet…).</p>
+  </div>
+</div>
+```
+
+  </div>
+
+  <div class="retenir">
+    L'homme a évolué en plusieurs étapes. Le plus important à retenir : <strong>Homo sapiens</strong>, c'est l'homme d'aujourd'hui, apparu il y a environ 300 000 ans en Afrique ! 💜
+  </div>
+</section>
+
+<!-- 3. VIE -->
+
+<section id="vie">
+  <div class="section-title"><div class="num">3</div> Comment vivaient-ils ? 🏕️</div>
+  <div class="sep">✦ ✧ ✦ ✧ ✦</div>
+
+  <div class="vie-grid">
+    <div class="vie-card">
+      <h3>🥩 Chasseurs-cueilleurs</h3>
+      <p>Ils <strong>chassent</strong> les animaux (mammouth, bison, cerf…) et <strong>cueillent</strong> les baies, fruits et racines. Ils ne cultivent pas encore la terre.</p>
+    </div>
+    <div class="vie-card">
+      <h3>🚶 Nomades</h3>
+      <p>Ils <strong>se déplacent</strong> en petits groupes pour suivre les animaux et trouver de la nourriture. Pas de maison fixe !</p>
+    </div>
+    <div class="vie-card">
+      <h3>🏠 Abris et grottes</h3>
+      <p>Ils vivent dans des <strong>grottes</strong> ou construisent des cabanes avec des peaux de bêtes et des os de mammouth.</p>
+    </div>
+    <div class="vie-card">
+      <h3>🔥 Le feu !</h3>
+      <p>Une révolution ! Le feu permet de se chauffer, de cuire la viande, d'éloigner les animaux dangereux et d'éclairer la nuit.</p>
+    </div>
+  </div>
+
+  <div class="retenir">
+    Pendant très longtemps, les hommes préhistoriques sont <strong>nomades</strong> : ils se déplacent pour chasser et cueillir. Ils ne restent pas au même endroit 🚶‍♀️
+  </div>
+</section>
+
+<!-- 4. OUTILS -->
+
+<section id="outils">
+  <div class="section-title"><div class="num">4</div> Les outils 🪨</div>
+  <div class="sep">✦ ✧ ✦ ✧ ✦</div>
+
+  <div class="card">
+    <h3>🪨 La pierre taillée – Paléolithique</h3>
+    <p>Les premiers outils sont fabriqués en <strong>pierre taillée</strong>. On frappe des pierres pour les rendre tranchantes. Cette période s'appelle le <strong>Paléolithique</strong> (= <em>ancienne pierre</em>).</p>
+  </div>
+
+  <div class="mini-grid">
+    <div class="mini-card">
+      <span class="icon">🪓</span>
+      <strong>Biface</strong>
+      <span>Pierre taillée des deux côtés. Sert à couper et gratter.</span>
+    </div>
+    <div class="mini-card">
+      <span class="icon">🏹</span>
+      <strong>Pointe de flèche</strong>
+      <span>En silex, pour chasser les animaux à distance.</span>
+    </div>
+    <div class="mini-card">
+      <span class="icon">🔪</span>
+      <strong>Grattoir</strong>
+      <span>Sert à gratter les peaux pour faire des vêtements.</span>
+    </div>
+    <div class="mini-card">
+      <span class="icon">🦴</span>
+      <strong>Aiguille en os</strong>
+      <span>Pour coudre des peaux et se faire des habits chauds.</span>
+    </div>
+    <div class="mini-card">
+      <span class="icon">🪚</span>
+      <strong>Hache polie</strong>
+      <span>Au Néolithique, la pierre est polie : plus solide !</span>
+    </div>
+    <div class="mini-card">
+      <span class="icon">🏺</span>
+      <strong>Poterie</strong>
+      <span>Au Néolithique, on invente la poterie pour stocker la nourriture.</span>
+    </div>
+  </div>
+
+  <div class="retenir">
+    Au <strong>Paléolithique</strong> : pierre taillée. Au <strong>Néolithique</strong> : pierre polie et poterie. Les outils s'améliorent avec le temps ! 🌟
+  </div>
+</section>
+
+<!-- 5. ART -->
+
+<section id="art">
+  <div class="section-title"><div class="num">5</div> L'art préhistorique 🎨</div>
+  <div class="sep">✦ ✧ ✦ ✧ ✦</div>
+
+  <div class="card">
+    <h3>🖌️ Les peintures dans les grottes</h3>
+    <p>Les hommes du Paléolithique peignent sur les <strong>parois des grottes</strong>. Ils représentent surtout des <strong>animaux</strong> : bisons, chevaux, mammouths, cerfs…</p>
+    <p style="margin-top:10px;">Ils utilisent des pigments naturels : <strong>ocre rouge</strong>, <strong>charbon noir</strong>, <strong>argile blanche</strong>. Ils soufflent la peinture dans leur bouche pour la projeter sur la paroi !</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:18px;">
+    <div class="card">
+      <h3>🏔️ Grotte Chauvet</h3>
+      <p>En Ardèche. Datée de <strong>36 000 ans</strong>. C'est l'une des plus anciennes grottes ornées du monde : lions, rhinocéros, ours…</p>
+    </div>
+    <div class="card">
+      <h3>🐂 Grotte de Lascaux</h3>
+      <p>En Dordogne. Datée de <strong>17 000 ans</strong>. Célèbre pour ses magnifiques peintures de taureaux, chevaux et cerfs.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>👩 Les statuettes</h3>
+    <p>Les hommes sculptent aussi de petites <strong>statuettes</strong>, souvent des femmes (appelées <em>Vénus</em>). Elles sont en ivoire ou en pierre et représentent peut-être la fertilité.</p>
+  </div>
+
+  <div class="retenir">
+    Les peintures des grottes montrent que les hommes préhistoriques avaient une <strong>pensée symbolique</strong> : ils pouvaient imaginer et représenter le monde autour d'eux. C'est incroyable ! 🤩
+  </div>
+</section>
+
+<!-- 6. NÉOLITHIQUE -->
+
+<section id="neolithique">
+  <div class="section-title"><div class="num">6</div> La révolution du Néolithique 🌾</div>
+  <div class="sep">✦ ✧ ✦ ✧ ✦</div>
+
+  <div class="card">
+    <h3>⏰ Vers – 10 000 avant J.-C.</h3>
+    <p>Il y a environ <strong>12 000 ans</strong>, tout change ! Les hommes inventent l'<strong>agriculture</strong> et l'<strong>élevage</strong>. C'est la <strong>révolution néolithique</strong> 🌟</p>
+  </div>
+
+  <div class="vie-grid">
+    <div class="vie-card" style="border-top-color:#34D399;">
+      <h3 style="color:#059669;">🌾 Agriculture</h3>
+      <p>Ils sèment et récoltent des céréales (blé, orge). Ils ne dépendent plus de la chasse !</p>
+    </div>
+    <div class="vie-card" style="border-top-color:#34D399;">
+      <h3 style="color:#059669;">🐄 Élevage</h3>
+      <p>Ils domestiquent des animaux : vaches, moutons, chèvres, chiens, cochons…</p>
+    </div>
+    <div class="vie-card" style="border-top-color:#34D399;">
+      <h3 style="color:#059669;">🏡 Villages</h3>
+      <p>Ils s'installent dans des villages permanents. Ils deviennent <strong>sédentaires</strong> !</p>
+    </div>
+    <div class="vie-card" style="border-top-color:#34D399;">
+      <h3 style="color:#059669;">🏺 Poterie & tissage</h3>
+      <p>Ils fabriquent des poteries pour stocker la nourriture et commencent à tisser des vêtements.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🪨 Les mégalithes</h3>
+    <p>Au Néolithique, les hommes érigent de <strong>grands monuments en pierre</strong> appelés <strong>mégalithes</strong> :</p>
+    <ul style="margin-top:10px; padding-left:22px; display:flex; flex-direction:column; gap:6px;">
+      <li><strong>Dolmens</strong> : grandes pierres plates formant une chambre funéraire</li>
+      <li><strong>Menhirs</strong> : grandes pierres dressées verticalement</li>
+      <li><strong>Cromlechs</strong> : cercles de pierres (ex : Stonehenge en Angleterre)</li>
+    </ul>
+  </div>
+
+  <div class="retenir">
+    Le Néolithique c'est une vraie révolution ! Les hommes passent de <strong>nomades chasseurs</strong> à <strong>sédentaires agriculteurs</strong>. Ils vivent dans des villages 🏡💜
+  </div>
+</section>
+
+<!-- QUIZ -->
+
+<section id="quiz">
+  <div class="section-title"><div class="num">💖</div> Quiz – À toi de jouer, Yousra !</div>
+  <div class="sep">✦ ✧ ✦ ✧ ✦</div>
+
+  <div class="quiz-box">
+    <h3>✨ Réponds aux questions ✨</h3>
+
+```
+<div class="question" id="q1">
+  <p>1. Où sont apparus les premiers hommes ?</p>
+  <div class="options">
+    <button class="option-btn" onclick="answer(this,'q1',false)">🇫🇷 En France</button>
+    <button class="option-btn" onclick="answer(this,'q1',true)">🌍 En Afrique</button>
+    <button class="option-btn" onclick="answer(this,'q1',false)">🌏 En Asie</button>
+  </div>
+  <div class="feedback" id="fb-q1"></div>
+</div>
+
+<div class="question" id="q2">
+  <p>2. Comment s'appelle la période avant l'écriture ?</p>
+  <div class="options">
+    <button class="option-btn" onclick="answer(this,'q2',false)">📜 L'Antiquité</button>
+    <button class="option-btn" onclick="answer(this,'q2',false)">⚔️ Le Moyen Âge</button>
+    <button class="option-btn" onclick="answer(this,'q2',true)">🦴 La Préhistoire</button>
+  </div>
+  <div class="feedback" id="fb-q2"></div>
+</div>
+
+<div class="question" id="q3">
+  <p>3. Qu'est-ce qu'un nomade ?</p>
+  <div class="options">
+    <button class="option-btn" onclick="answer(this,'q3',true)">🚶 Quelqu'un qui se déplace sans s'installer quelque part</button>
+    <button class="option-btn" onclick="answer(this,'q3',false)">🏡 Quelqu'un qui reste toujours au même endroit</button>
+    <button class="option-btn" onclick="answer(this,'q3',false)">🌾 Quelqu'un qui cultive la terre</button>
+  </div>
+  <div class="feedback" id="fb-q3"></div>
+</div>
+
+<div class="question" id="q4">
+  <p>4. Quel ancêtre humain a maîtrisé le feu ?</p>
+  <div class="options">
+    <button class="option-btn" onclick="answer(this,'q4',false)">🦴 L'Australopithèque</button>
+    <button class="option-btn" onclick="answer(this,'q4',true)">🔥 Homo erectus</button>
+    <button class="option-btn" onclick="answer(this,'q4',false)">🎨 Homo habilis</button>
+  </div>
+  <div class="feedback" id="fb-q4"></div>
+</div>
+
+<div class="question" id="q5">
+  <p>5. Quelle grotte célèbre se trouve en Dordogne, avec des peintures datant de 17 000 ans ?</p>
+  <div class="options">
+    <button class="option-btn" onclick="answer(this,'q5',false)">🦁 La grotte Chauvet</button>
+    <button class="option-btn" onclick="answer(this,'q5',true)">🐂 La grotte de Lascaux</button>
+    <button class="option-btn" onclick="answer(this,'q5',false)">🏔️ La grotte d'Altamira</button>
+  </div>
+  <div class="feedback" id="fb-q5"></div>
+</div>
+
+<div class="question" id="q6">
+  <p>6. Qu'est-ce que la révolution néolithique ?</p>
+  <div class="options">
+    <button class="option-btn" onclick="answer(this,'q6',false)">🔥 L'invention du feu</button>
+    <button class="option-btn" onclick="answer(this,'q6',false)">🎨 L'invention de l'art</button>
+    <button class="option-btn" onclick="answer(this,'q6',true)">🌾 L'invention de l'agriculture et de l'élevage</button>
+  </div>
+  <div class="feedback" id="fb-q6"></div>
+</div>
+
+<div class="question" id="q7">
+  <p>7. Comment appelle-t-on les grandes pierres dressées verticalement au Néolithique ?</p>
+  <div class="options">
+    <button class="option-btn" onclick="answer(this,'q7',false)">🏛️ Des dolmens</button>
+    <button class="option-btn" onclick="answer(this,'q7',true)">🗿 Des menhirs</button>
+    <button class="option-btn" onclick="answer(this,'q7',false)">🏟️ Des cromlechs</button>
+  </div>
+  <div class="feedback" id="fb-q7"></div>
+</div>
+
+<button id="btn-quiz" onclick="showScore()">💖 Voir mon résultat !</button>
+
+<div id="score-box">
+  <h3>🌸 Ton résultat, Yousra !</h3>
+  <span class="score-num" id="score-val">0/7</span>
+  <p id="score-msg"></p>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- LEXIQUE -->
+
+<section id="lexique">
+  <div class="section-title"><div class="num">📖</div> Lexique – Les mots importants</div>
+  <div class="sep">✦ ✧ ✦ ✧ ✦</div>
+
+  <div class="lexique-item"><strong>Préhistoire</strong> : La période avant l'invention de l'écriture, qui dure environ 3 millions d'années.</div>
+  <div class="lexique-item"><strong>Archéologue</strong> : Scientifique qui fouille la terre pour trouver des traces du passé.</div>
+  <div class="lexique-item"><strong>Nomade</strong> : Personne qui se déplace sans s'installer durablement quelque part.</div>
+  <div class="lexique-item"><strong>Sédentaire</strong> : Personne qui vit au même endroit de façon permanente.</div>
+  <div class="lexique-item"><strong>Paléolithique</strong> : La « vieille période de la pierre » – les hommes taillent la pierre pour faire des outils.</div>
+  <div class="lexique-item"><strong>Néolithique</strong> : La « nouvelle période de la pierre » – agriculture, élevage et premiers villages.</div>
+  <div class="lexique-item"><strong>Peinture rupestre</strong> : Peinture réalisée sur la paroi d'une grotte.</div>
+  <div class="lexique-item"><strong>Mégalithe</strong> : Grand monument en pierre (menhir, dolmen, cromlech).</div>
+  <div class="lexique-item"><strong>Homo sapiens</strong> : L'être humain moderne, apparu il y a environ 300 000 ans en Afrique.</div>
+  <div class="lexique-item"><strong>Homo erectus</strong> : Ancêtre de l'homme qui marchait bien droit et maîtrisait le feu.</div>
+</section>
+
+</div><!-- /wrapper -->
+
+<footer>
+  Cours d'Histoire – 6ème 💜 Spécialement conçu pour <span>Yousra</span> 🌸 · Conforme aux programmes officiels 🇫🇷
+</footer>
+
+<script>
+  const answers = {};
+  const explanations = {
+    q1: "💖 Bravo Yousra ! Les premiers hommes sont apparus en Afrique, il y a environ 3 millions d'années.",
+    q2: "✨ Exact ! La Préhistoire est la période avant l'écriture.",
+    q3: "🌸 Bien joué ! Un nomade se déplace continuellement pour trouver de la nourriture.",
+    q4: "💜 Correct ! Homo erectus a été le premier à maîtriser le feu, il y a environ 1,8 million d'années.",
+    q5: "🎀 Oui ! Lascaux est en Dordogne, ses peintures ont environ 17 000 ans.",
+    q6: "⭐ Parfait ! Le Néolithique, c'est l'invention de l'agriculture et de l'élevage.",
+    q7: "🌟 C'est ça ! Les menhirs sont de grandes pierres dressées verticalement."
+  };
+  const wrongExplanations = {
+    q1: "❌ Pas tout à fait. Les premiers hommes sont apparus en Afrique.",
+    q2: "❌ Non. La Préhistoire est la période avant l'écriture.",
+    q3: "❌ Non. Un nomade est quelqu'un qui se déplace sans s'installer.",
+    q4: "❌ Non. C'est Homo erectus qui a maîtrisé le feu.",
+    q5: "❌ Non. C'est la grotte de Lascaux, en Dordogne.",
+    q6: "❌ Non. La révolution néolithique, c'est l'agriculture et l'élevage.",
+    q7: "❌ Non. Un menhir est une grande pierre dressée verticalement."
+  };
+
+  function answer(btn, qid, isCorrect) {
+    if (answers[qid] !== undefined) return;
+    answers[qid] = isCorrect;
+    const question = document.getElementById(qid);
+    question.querySelectorAll('.option-btn').forEach(b => { b.disabled = true; });
+    const fb = document.getElementById('fb-' + qid);
+    fb.classList.add('show');
+    if (isCorrect) {
+      btn.classList.add('correct');
+      fb.classList.add('ok');
+      fb.textContent = explanations[qid];
+    } else {
+      btn.classList.add('wrong');
+      fb.classList.add('ko');
+      fb.textContent = wrongExplanations[qid];
+    }
+  }
+
+  function showScore() {
+    const score = Object.values(answers).filter(Boolean).length;
+    document.getElementById('score-val').textContent = score + '/7';
+    let msg = '';
+    if (score <= 2) msg = "Continue à réviser, tu vas y arriver Yousra ! 💪 Relis le cours.";
+    else if (score <= 4) msg = "Pas mal ! Quelques points à retravailler encore 📚";
+    else if (score <= 6) msg = "Très bien Yousra ! Tu as bien compris le cours 🌟";
+    else msg = "Félicitations Yousra, tu maîtrises parfaitement ce chapitre ! 🏆🌸";
+    document.getElementById('score-msg').textContent = msg;
+    document.getElementById('score-box').style.display = 'block';
+    document.getElementById('btn-quiz').style.display = 'none';
+    document.getElementById('score-box').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
